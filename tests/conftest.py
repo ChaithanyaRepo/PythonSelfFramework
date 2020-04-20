@@ -15,10 +15,9 @@ firefoxOptions.add_argument("--ignore-certificate-errors")
 
 
 def pytest_addoption(parser):
-    parser.addoption(
-        "--browser_name", action="store", default="chrome", help="please specify the browser"
-        # To provide URL in the runtime add another field same as browser and specify URL during build trigger
-    )
+    parser.addoption("--browser_name", action="store", default="chrome", help="please specify the browser")
+    # To provide URL in the runtime add another field same as browser and specify URL during build trigger
+    parser.addoption("--url", action="store", default=None, help="provide URL if you want")
 
 
 @pytest.fixture(scope="class")
